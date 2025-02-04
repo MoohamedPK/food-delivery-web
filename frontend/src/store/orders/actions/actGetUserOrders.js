@@ -9,7 +9,7 @@ const actGetUserOrders = createAsyncThunk("orders/actGetUserOrders", async(_, {r
 
     try {
         if (token) {
-            const response = await axios.post("http://localhost:5000/api/order/userorders", {}, {headers: {token}})
+            const response = await axios.post("https://food-delivery-web-backend-xjvc.onrender.com/api/order/userorders", {}, {headers: {token}})
             return response.data
         }
     } catch (error) {
