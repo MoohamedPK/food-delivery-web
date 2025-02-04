@@ -10,7 +10,7 @@ const actGetUserCartItems = createAsyncThunk(
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/cart/get",
+        "https://food-delivery-web-backend-xjvc.onrender.com/api/cart/get",
         {},
         { headers: { token } }
       );
