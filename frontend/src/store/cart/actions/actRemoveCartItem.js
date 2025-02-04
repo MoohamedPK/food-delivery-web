@@ -9,7 +9,7 @@ const actRemoveCartItems = createAsyncThunk(
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/cart/remove",
+        "https://food-delivery-web-backend-xjvc.onrender.com/api/cart/remove",
         { itemId },
         { headers: { token } }
       );
