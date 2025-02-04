@@ -7,7 +7,7 @@ const loginAction = createAsyncThunk(
     try {
 
       const response = await axios.post(
-        "http://localhost:5000/api/user/login",formData);
+        "https://food-delivery-web-backend-xjvc.onrender.com/api/user/login",formData);
       
         return response.data
 
