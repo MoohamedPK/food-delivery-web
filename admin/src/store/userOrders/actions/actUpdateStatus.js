@@ -6,7 +6,7 @@ const actUpdateStatus = createAsyncThunk(
   async ({ orderId, status }, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/order/status",
+        "https://food-delivery-web-backend-xjvc.onrender.com/api/order/status",
         { orderId, status }
       );
       return response.data;
