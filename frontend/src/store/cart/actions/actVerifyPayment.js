@@ -9,7 +9,7 @@ const actVerifyPayment = createAsyncThunk(
 
     try {
         const response = await axios.post(
-          "http://localhost:5000/api/order/verify",
+          "https://food-delivery-web-backend-xjvc.onrender.com/api/order/verify",
           { orderId, success}
         );
         
