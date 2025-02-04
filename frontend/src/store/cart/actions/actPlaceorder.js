@@ -27,7 +27,7 @@ const actPlaceorder = createAsyncThunk("cart/actPlaceorder", async({formData, su
           amount: subTotalAmount + 2,
         };
 
-        const response = await axios.post('http://localhost:5000/api/order/place', orderData, {headers: {token}})
+        const response = await axios.post('https://food-delivery-web-backend-xjvc.onrender.com/api/order/place', orderData, {headers: {token}})
         console.log(response.data)
         if (response.data.success) {
             const {session_url} = response.data
