@@ -5,7 +5,7 @@ import Stripe from "stripe"
 
 const placeOrder = async (req, res) => {
 
-    const front_host = "https://food-delivery-web-frontend-99lm.onrender.com/";
+    const front_host = "https://food-delivery-web-frontend-99lm.onrender.com";
 
     const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
