@@ -5,7 +5,7 @@ const actGetUserOrders = createAsyncThunk("orders/actGetUserOrders", async(_, {r
 
     try {
         
-        const response = await axios.get("http://localhost:5000/api/order/list");
+        const response = await axios.get("https://food-delivery-web-backend-xjvc.onrender.com/api/order/list");
         return response.data;
 
     } catch (error) {
