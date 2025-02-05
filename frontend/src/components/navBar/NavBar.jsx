@@ -1,7 +1,7 @@
 import {assets} from "../../assets/assets";
 import "../../components/navBar/navbar.css"
 import { Link } from "react-router-dom";
-import {LogOut, Moon, Package} from "lucide-react"
+import {LogOut, Moon, Package, ShoppingBasket, User2} from "lucide-react"
 import MobileNavbar from "./MobileNavbar";
 import useNavbar from "../../hooks/useNavbar";
 
@@ -81,14 +81,10 @@ function NavBar({ setShowlogin }) {
         </ul>
 
         <div className="flex items-center space-x-8">
-          <img className="size-5 lg:size-7" src={assets.search_icon} alt="" />
+          <Moon className="cursor-pointer"/>
           <div className="relative">
             <Link to={"/cart"}>
-              <img
-                className="size-5 lg:size-7"
-                src={assets.basket_icon}
-                alt=""
-              />
+              <ShoppingBasket />
             </Link>
             <div
               className={
@@ -101,19 +97,17 @@ function NavBar({ setShowlogin }) {
 
           {token ? (
             <div className="hidden md:block">
-              <img
-                className="cursor-pointer"
-                onClick={() => setDrodown(!dropown)}
-                src={assets.profile_icon}
-                alt=""
-              />
+              <User2 className="cursor-pointer" onClick={() => setDrodown(!dropown)} />
 
               {dropown ? (
-                <ul className="dropdown  p-2 flex flex-col justify-between items-center absolute top-20 md:right-10 lg:right-20 xl:right-40 bg-white size-44 font-medium shadow-2xl shadow-black/70 rounded-lg">
-                  <li className="flex items-center space-x-3 w-full hover:bg-black hover:text-white px-3 py-2 rounded-lg transition duration-200 cursor-pointer ">
+                <ul className="dropdown w-[150px] h-[120px] p-2 flex flex-col justify-between items-center absolute top-20 md:right-10 lg:right-20 xl:right-40 bg-white font-medium shadow-2xl shadow-black/70 rounded-lg">
+                  {/* <li className="flex items-center space-x-3 w-full hover:bg-black hover:text-white px-3 py-2 rounded-lg transition duration-200 cursor-pointer ">
                     <Moon /> <p>dark</p>
-                  </li>
-                  <Link to={"/myorders"} className="flex items-center space-x-3 w-full hover:bg-black hover:text-white px-3 py-2 rounded-lg transition duration-200 cursor-pointer ">
+                  </li> */}
+                  <Link
+                    to={"/myorders"}
+                    className="flex items-center space-x-3 w-full hover:bg-black hover:text-white px-3 py-2 rounded-lg transition duration-200 cursor-pointer "
+                  >
                     <Package />
                     <p>Orders</p>
                   </Link>
@@ -129,7 +123,7 @@ function NavBar({ setShowlogin }) {
             </div>
           ) : (
             <button
-              className="hidden md:block relative text-lg group"
+              className="hidden md:block relative group"
               onClick={() => {
                 setShowlogin(true);
               }}
@@ -158,7 +152,15 @@ function NavBar({ setShowlogin }) {
       </div>
 
       {/* MOBILE NAVBAR */}
-      <MobileNavbar mobileNav={mobileNav} setMobileNav={setMobileNav} setShowlogin={setShowlogin} handleLogout={handleLogout} token={token} dropown={dropown} setDrodown={setDrodown}/>
+      <MobileNavbar
+        mobileNav={mobileNav}
+        setMobileNav={setMobileNav}
+        setShowlogin={setShowlogin}
+        handleLogout={handleLogout}
+        token={token}
+        dropown={dropown}
+        setDrodown={setDrodown}
+      />
     </div>
   );
 }

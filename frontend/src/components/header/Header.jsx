@@ -1,7 +1,9 @@
+import "./header.css"
+
 
 function Header() {
   return (
-    <div className="header bg-header-bg bg-cover w-[100%] h-screen md:h-[43vw]  rounded-lg bg-no-repeat relative my-[30px] font-medium text-white ">
+    <div className="header w-[100%] h-screen md:h-[43vw]  rounded-lg bg-no-repeat relative my-[30px] font-medium text-white ">
       <div className="header_content absolute bottom-[18%] md:bottom-8 left-[6%] flex flex-col items-start md:w-1/2 gap-7 animate-fadeIn">
         <h1 className="font-medium text-[40px] md:text-[50px] lg:text-[60px]  ">
           Order your <br></br>favorite food here

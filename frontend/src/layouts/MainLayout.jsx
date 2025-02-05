@@ -10,14 +10,14 @@ function MainLayout() {
   
 
   return (
-    <>
-      {showLogin && <LoginPage setShowLogin={setShowLogin} />}
+      <div className="font-main">
+        {showLogin && <LoginPage setShowLogin={setShowLogin} />}
         <NavBar setShowlogin={setShowLogin} />
-      <div className="container flex flex-col h-screen px-[30px] mx-auto space-y-10">
-        <Outlet />
-        <Footer />
+        <div className="container flex flex-col h-screen px-[30px] mx-auto space-y-10">
+          <Outlet />
+          <Footer />
+        </div>
       </div>
-    </>
   );
 }
 

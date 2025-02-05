@@ -35,26 +35,26 @@ const CartSubTotalPrice = ({ subTotal }) => {
         <div>
           <button
             onClick={handleCheckout}
-            className="bg-orange-500 px-8 py-3 rounded-lg text-white "
+            className="bg-orange-500 px-8 py-3 rounded-lg text-white w-full md:w-auto mt-4 md:mt-0 text-sm md:text-base"
           >
             PROCEEDE TO CHECKOUT
           </button>
         </div>
       </div>
 
-      <div className="right-side mb-10 md:mt-0 md:ml-32 text-gray-600 text-lg space-y-8 md:flex-1 md:flex-wrap flex flex-col items-center w-full p-4">
+      <div className="right-side mb-10 md:mt-0 md:ml-32 text-gray-600 text-base space-y-8 md:flex-1 md:flex-wrap flex flex-col items-center w-full p-4">
         <p>If you have a promo code. Enter it here</p>
 
-        <div className="flex flex-wrap md:space-y-5 items-center ">
+        <div className="flex flex-wrap ">
           <input
-            className="px-2 py-2"
+            className="px-2 md:py-3 py-2 my-3 md:my-0 w-full md:w-auto"
             type="text"
             name=""
             id=""
             required
             placeholder="promo code"
           />
-          <button className="text-white bg-black ml-4 px-10 py-2">
+          <button className="text-white w-full md:w-auto md:ml-3 ml-0 bg-black px-10 py-2">
             Submit
           </button>
         </div>
