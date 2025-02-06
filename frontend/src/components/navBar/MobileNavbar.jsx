@@ -40,10 +40,10 @@ function MobileNavbar({
                         <li className="flex items-center space-x-3 w-full hover:bg-black hover:text-white px-3 py-2 rounded-lg transition duration-200 cursor-pointer ">
                           <Moon /> <p>dark</p>
                         </li>
-                        <li className="flex items-center space-x-3 w-full hover:bg-black hover:text-white px-3 py-2 rounded-lg transition duration-200 cursor-pointer ">
+                        <Link to={'/myorders'} className="flex items-center space-x-3 w-full hover:bg-black hover:text-white px-3 py-2 rounded-lg transition duration-200 cursor-pointer ">
                           <Package />
                           <p>Orders</p>
-                        </li>
+                        </Link>
                         <li
                           onClick={handleLogout}
                           className="flex items-center space-x-3 w-full hover:bg-black hover:text-white px-3 py-2 rounded-lg transition duration-200 cursor-pointer "

@@ -2,12 +2,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import MainLayout from "../layouts/MainLayout"
 
 // PAGES
-import { Home,Cart, PlaceOrder, Verify, MyOrders} from "../pages/main"
+import { Home,Cart, PlaceOrder, Verify, MyOrders, Error} from "../pages/main"
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <Error/>,
     children: [
       {
         index: true,

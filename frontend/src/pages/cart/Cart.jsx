@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux"
 import { removeItemFromCart } from "../../store/cart/cartSlice";
 import CartSubTotalPrice from "../../components/cartSubTotalPrice/CartSubTotalPrice";
 import useGetSubTotal from "../../hooks/useGetSubTotal";
-
+import {Lottihandler} from "../../feedback/Lottihandler"
 function Cart() {
 
   const dispatch = useDispatch()
@@ -28,7 +28,8 @@ const {subTotalAmount, cartItems, records} = useGetSubTotal()
         <hr className="bg-gray-400 h-[2px]" />
 
         <div className="font-medium">
-          {records.map((item, index) => {
+          {records.length > 0 ?
+            records.map((item, index) => {
             if (cartItems[item._id] > 0) {
               return (
                 <>
@@ -63,7 +64,12 @@ const {subTotalAmount, cartItems, records} = useGetSubTotal()
                 </>
               );
             }
-          })}
+          })
+
+          
+          : (
+            <Lottihandler type={"empty"}/>
+          )}
         </div>
       </div>
 
