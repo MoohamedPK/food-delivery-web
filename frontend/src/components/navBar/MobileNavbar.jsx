@@ -29,12 +29,7 @@ function MobileNavbar({
               <div className="flex items-center flex-col">
                 {token ? (
                   <div className="flex flex-col items-center space-y-3">
-                    {/* <img
-                      className="cursor-pointer"
-                      onClick={() => setDrodown(!dropown)}
-                      src={assets.profile_icon}
-                      alt=""
-                    /> */}
+                    
                     <User2
                       className="cursor-pointer"
                       onClick={() => setDrodown(!dropown)}
@@ -78,23 +73,23 @@ function MobileNavbar({
                   </button>
                 )}
               </div>
-              <li className="hover:bg-orange-600 transition duration-300 p-3  cursor-pointer">
+              <li className="hover:bg-orange-600 transition duration-300 p-3  cursor-pointer text-base">
                 <Link to={"/"}>
                 Home
 
                 </Link>
               </li>
-              <li className="hover:bg-orange-600 transition duration-300 p-3  cursor-pointer">
+              <li className="hover:bg-orange-600 transition duration-300 p-3  cursor-pointer text-base">
                 <a href="#category">
                   Menu
                 </a>
               </li>
-              <li className="hover:bg-orange-600 transition duration-300 p-3  cursor-pointer">
+              <li className="hover:bg-orange-600 transition duration-300 p-3  cursor-pointer text-base">
                 <a href="#food">
                   Our food
                 </a>
               </li>
-              <li className="hover:bg-orange-600 transition duration-300 p-3  cursor-pointer">
+              <li className="hover:bg-orange-600 transition duration-300 p-3  cursor-pointer text-base">
                 <a href='#contact'>
                   Contact Us
                 </a>

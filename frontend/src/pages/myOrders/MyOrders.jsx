@@ -19,7 +19,10 @@ function MyOrders() {
         <div className="space-y-4 mt-10">
         {userOrders.map((order, index) => {
           return (
-            <div key={index} className="p-4 lg:grid lg:grid-cols-5 sm:flex sm:flex-col items-start space-y-3 lg:items-center text-center font-medium border border-orange-600 rounded-xl">
+            <div
+              key={index}
+              className="p-4 lg:grid lg:grid-cols-5 sm:flex sm:flex-col items-start space-y-3 lg:items-center text-center font-medium border border-orange-600 rounded-xl"
+            >
               <div className="flex items-center text-start space-x-6">
                 {/* <Package className="size-14 "/> */}
                 <img src={assets.parcel_icon} alt="" />
@@ -36,11 +39,14 @@ function MyOrders() {
               </div>
               <p>${order.amount}.00</p>
               <p>items : {order.items.length}</p>
-                <li className="list-disc ">
-                  <b>Order status :{order.status}</b>
-                </li>
-              <button className="bg-black text-white p-2 rounded-lg lg:w-[200px] w-[150px] text-sm md:text-base lg:mx-auto">Track Order</button>
-
+              <li className="list-disc ">
+                <b>
+                  Order status : <span className="text-orange-600">{order.status}</span>{" "}
+                </b>
+              </li>
+              <button className="bg-black text-white p-2 rounded-lg lg:w-[150px] w-[100px] text-sm lg:mx-auto">
+                Track Order
+              </button>
             </div>
           );
         })}

@@ -17,10 +17,10 @@ function PlaceOrder() {
   return (
     <form
       onSubmit={handleSubmit(submitForm)}
-      className="flex items-start justify-between gap-10 mt-[100px]"
+      className="flex flex-col md:flex-row md:items-start md:justify-between  gap-10 mt-[100px]"
     >
-      <div className="left-side w-full max-w-[40%]">
-        <p className="font-medium text-3xl mb-10">Delivery information</p>
+      <div className="left-side w-full">
+        <p className="font-medium md:text-3xl text-2xl mb-10">Delivery information</p>
         <div className="multi-inputs flex  gap-8">
           <input
             {...register("first_name")}
@@ -93,23 +93,23 @@ function PlaceOrder() {
         />
       </div>
 
-      <div className="right-side w-full max-w-[40%] space-y-5 font-medium">
+      <div className="right-side w-full space-y-5 font-medium">
         <h1 className="font-bold text-xl">Cart Totals</h1>
 
         <div className="subtotal flex justify-between items-center ">
           <p>Subtotal</p>
-          <span className="text-lg">${subTotalAmount}</span>
+          <span className="">${subTotalAmount}</span>
         </div>
         <hr className="border-1 border-black" />
 
         <div className="fee flex justify-between items-center ">
           <p>Delivery Fee</p>
-          <span className="text-lg">$2</span>
+          <span className="">$2</span>
         </div>
 
         <div className=" flex justify-between items-center ">
           <p>Total</p>
-          <span className="text-lg">
+          <span className="">
             ${subTotalAmount === 0 ? 0 : subTotalAmount + 2}
           </span>
         </div>
@@ -117,7 +117,7 @@ function PlaceOrder() {
         <div>
           <button
             type="submit"
-            className="bg-orange-500 px-8 py-3 rounded-lg text-white "
+            className="bg-orange-500 px-8 py-3 rounded-lg text-white w-full mt-3 md:w-auto md:mt-0"
           >
             PROCEEDE TO PAYMENT
           </button>
