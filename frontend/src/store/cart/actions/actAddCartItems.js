@@ -10,7 +10,7 @@ const actAddCartItems = createAsyncThunk(
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/cart/add",
+        "https://food-delivery-web-backend-3cig.onrender.com/api/cart/add",
         { itemId },
         { headers: { token } }
       );
