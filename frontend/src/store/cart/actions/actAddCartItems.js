@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const actAddCartItems = createAsyncThunk(
   "cart/actAddCartItems",
@@ -13,7 +14,14 @@ const actAddCartItems = createAsyncThunk(
         { itemId },
         { headers: { token } }
       );
-      return response.data.items;
+      
+      if (response.data.success) {
+        toast.success(response.data.message)
+        return response.data
+      } else {
+        return toast.error(response.data.message)
+      }
+
     } catch (error) {
       rejectWithValue(error.message);
     }

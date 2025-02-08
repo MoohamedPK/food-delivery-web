@@ -10,14 +10,14 @@ import storage from 'redux-persist/lib/storage' // fore defaut (local storage)
 const rootPersistConfig = {
   key: "root",
   storage,
-  whiteList : ["cart", "auth"]
+  whiteList : [ "cart"]
 }
 
-const authPersistConfig = {
-  key: "auth",
-  storage,
-  whiteList: ["token"],
-};
+// const authPersistConfig = {
+//   key: "auth",
+//   storage,
+//   whiteList: ["token"],
+// };
 
 const cartPersistConfig = {
   key: "cart",
@@ -28,7 +28,7 @@ const cartPersistConfig = {
 const rootReducer = combineReducers({
   food: foodReducer,
   cart: persistReducer(cartPersistConfig, cartReducer),
-  auth: persistReducer(authPersistConfig, authReducer),
+  auth: authReducer,
   orders: ordersReducer,
 });
 

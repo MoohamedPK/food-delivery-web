@@ -14,7 +14,7 @@ const lottiesMap = {
 export const Lottihandler = ({type, message}) => {
     const lottie = lottiesMap[type]
   return (
-    <div className="flex flex-col justify-center items-center h-screen text-center text-xl font-semibold">
+    <div className="flex flex-col mt-20 items-center  h-screen text-center text-xl font-semibold">
       <Lottie animationData={lottie} className="w-[170px]"></Lottie>
       {message && <h1 className=" font-medium">{message}</h1>}
     </div>

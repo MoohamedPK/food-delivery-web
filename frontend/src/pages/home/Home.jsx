@@ -5,18 +5,16 @@ import Header from "../../components/header/Header"
 import FoodDisplay from "../../components/foodDisplay/FoodDisplay";
 import actGetFoodList from "../../store/foodProducts/actions/actGetFoodList";
 import actGetUserCartItems from "../../store/cart/actions/actGetUserCartItem";
-import {useParams} from "react-router-dom"
 
 function Home() {
-
-
 
   const [category, setCategory] = useState("all");
   const token = useSelector((state) => state.auth.token);
   
   const dispatch = useDispatch();
+  
   useEffect(() => {
-    dispatch(actGetFoodList());
+    dispatch(actGetFoodList())
 
     if (token) {
       dispatch(actGetUserCartItems());

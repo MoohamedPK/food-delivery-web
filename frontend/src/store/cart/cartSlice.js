@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {actAddCartItems,actRemoveCartItems,actGetUserCartItems} from "./index";
-import { useNavigate } from "react-router-dom";
 
 const initialState = {
     items: {},
@@ -17,10 +16,6 @@ const cartSlice = createSlice({
             state.items = {}
         },
 
-        removeItemFromCart : (state, action) => {
-            const id = action.payload;
-            delete state.items[id]
-        }
     },
     extraReducers: (builder) => {
       //ADD CART ITEMS
@@ -30,7 +25,7 @@ const cartSlice = createSlice({
       });
 
       builder.addCase(actAddCartItems.fulfilled, (state, action) => {
-        state.items = action.payload;
+        state.items = action.payload.items
         state.loading = "succeeded";
         state.error = null;
       });
