@@ -9,7 +9,7 @@ const actDeleteCartItem = createAsyncThunk("cart/actDeleteCartItem", async(itemI
     try {
 
         const response = await axios.delete(
-          "http://localhost:5000/api/cart/delete",{
+          "https://food-delivery-web-backend-3cig.onrender.com/api/cart/delete",{
           headers: { token },
             data: { itemId },
     });
