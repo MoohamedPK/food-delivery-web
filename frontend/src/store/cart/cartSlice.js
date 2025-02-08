@@ -25,7 +25,7 @@ const cartSlice = createSlice({
       });
 
       builder.addCase(actAddCartItems.fulfilled, (state, action) => {
-        state.items = action.payload.items
+        state.items = action.payload
         state.loading = "succeeded";
         state.error = null;
       });

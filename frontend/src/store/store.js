@@ -10,7 +10,7 @@ import storage from 'redux-persist/lib/storage' // fore defaut (local storage)
 const rootPersistConfig = {
   key: "root",
   storage,
-  whiteList : [ "cart"]
+  whiteList : ["cart"]
 }
 
 // const authPersistConfig = {

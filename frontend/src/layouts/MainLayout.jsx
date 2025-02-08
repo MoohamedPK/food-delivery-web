@@ -11,15 +11,15 @@ function MainLayout() {
   
 
   return (
-      <div className="font-main">
-        <ToastContainer/>
-        {showLogin && <LoginPage setShowLogin={setShowLogin} />}
-        <NavBar setShowlogin={setShowLogin} />
-        <div className="container flex flex-col h-screen px-[30px] mx-auto space-y-10">
-          <Outlet />
-          <Footer />
-        </div>
+    <div className="font-main container flex flex-col h-screen">
+      <ToastContainer className="top-20" />
+      {showLogin && <LoginPage setShowLogin={setShowLogin} />}
+      <NavBar setShowlogin={setShowLogin} />
+      <div className="px-[9%] mx-auto space-y-10">
+        <Outlet />
       </div>
+      <Footer />
+    </div>
   );
 }
 

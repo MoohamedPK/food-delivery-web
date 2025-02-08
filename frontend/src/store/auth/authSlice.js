@@ -4,7 +4,8 @@ import loginAction from "./actions/actAuthLogin";
 
 const initialState = {
     token: '',
-    loading: "idle" | "pending" | "succeeded" | "failed"
+    loading: "idle" | "pending" | "succeeded" | "failed",
+    error: "" | null
 }
 
 const authSlice = createSlice({
@@ -15,6 +16,9 @@ const authSlice = createSlice({
         state.token = ''
       }
     },
+
+    //REGISTER 
+
     extraReducers: (builder) => {
         builder.addCase(registerAction.pending, (state) => {
           state.loading = "pending";
@@ -22,13 +26,13 @@ const authSlice = createSlice({
         builder.addCase(registerAction.fulfilled, (state) => {
           state.loading = "succeeded";
         });
-        builder.addCase(registerAction.rejected, (state) => {
-        //   console.log(action.payload.message);
+        builder.addCase(registerAction.rejected, (state,) => {
           state.loading = "failed";
         });
 
 
         //LOGIN
+
         builder.addCase(loginAction.pending, (state) => {
           state.loading = "pending";
         });
@@ -36,8 +40,7 @@ const authSlice = createSlice({
           state.loading = "succeeded";
           state.token = action.payload.token
         });
-        builder.addCase(loginAction.rejected, (state, action) => {
-          console.log(action);
+        builder.addCase(loginAction.rejected, (state) => {
           state.loading = "failed";
         });
 

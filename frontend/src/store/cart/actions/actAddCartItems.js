@@ -10,14 +10,14 @@ const actAddCartItems = createAsyncThunk(
 
     try {
       const response = await axios.post(
-        "https://food-delivery-web-backend-xjvc.onrender.com/api/cart/add",
+        "http://localhost:5000/api/cart/add",
         { itemId },
         { headers: { token } }
       );
       
       if (response.data.success) {
         toast.success(response.data.message)
-        return response.data
+        return response.data.items
       } else {
         return toast.error(response.data.message)
       }

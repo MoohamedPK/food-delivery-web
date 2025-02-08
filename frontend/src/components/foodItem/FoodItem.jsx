@@ -6,19 +6,18 @@ const FoodItem = ({_id, name, price, image, description}) => {
 
     const dispatch = useDispatch();
     const {items} = useSelector(state => state.cart)
-    const token = useSelector(state => state.auth.token)
-
+    const {token} = useSelector(state => state.auth)
 
     const handleAddToCart = () => {
       if (token) {
-        dispatch(actAddCartItems(_id))
+        dispatch(actAddCartItems(_id));
       }
     }
     
     const handleRemove = () => {
       if (token) {
         dispatch(actRemoveCartItems(_id));
-      }
+      } 
     };
 
   return (
@@ -39,13 +38,15 @@ const FoodItem = ({_id, name, price, image, description}) => {
         <div className="rating flex justify-between items-center mt-8">
           <p className="font-semibold">{name}</p>
 
-          {!items[_id] ? (
-            <span
-              onClick={handleAddToCart}
-              className="bg-orange-500 px-3 md:px-5 py-1 text-sm text-white rounded-lg"
-            >
-              Add
-            </span>
+          {!items[_id]? (
+
+              <span
+                onClick={handleAddToCart}
+                className="bg-orange-500 px-3 md:px-5 py-1 text-sm text-white rounded-lg"
+              >
+                Add
+              </span>
+
           ) : (
             <div className="flex items-center space-x-5 text-lg text-white">
               <span

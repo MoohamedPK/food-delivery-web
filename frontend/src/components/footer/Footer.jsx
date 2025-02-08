@@ -2,7 +2,7 @@ import {assets} from "../../assets/assets";
 
 const Footer = () => {
   return (
-    <div className="bg-black text-neutral-400" id="contact">
+    <div className="bg-black text-neutral-400 mt-20" id="contact">
       <div className="content flex flex-col md:flex-row md:justify-around py-10">
         <div className="md:w-1/2 flex flex-col items-center text-center space-y-6">
           <img className="" src={assets.logo} alt="" />

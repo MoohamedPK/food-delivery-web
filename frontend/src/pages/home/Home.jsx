@@ -24,9 +24,9 @@ function Home() {
 
   return (
     <div>
-      <Header />
-      <FoodMenu category={category} setCategory={setCategory} />
-      <FoodDisplay category={category}/>
+        <Header />
+        <FoodMenu category={category} setCategory={setCategory} />
+        <FoodDisplay category={category}/>
     </div>
   );
 }
