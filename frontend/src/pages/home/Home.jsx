@@ -14,10 +14,14 @@ function Home() {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    dispatch(actGetFoodList())
+    const promise = dispatch(actGetFoodList())
 
     if (token) {
       dispatch(actGetUserCartItems());
+    }
+
+    return () => {
+      promise.abort();
     }
 
   }, [dispatch, token])

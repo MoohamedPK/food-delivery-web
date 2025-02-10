@@ -32,9 +32,9 @@ function List() {
   }
 
   return (
-    <div className="w-full ">
-      <div className="overflow-x-scroll">
-        <div className="grid grid-cols-6 text-center items-center mt-10 text-gray-600 text-lg font-medium">
+    <div className="w-full">
+      <div className="overflow-x-scroll ">
+        <div className="grid grid-cols-6 text-center items-center mt-10 text-gray-600 font-medium">
           <div className="">Image</div>
           <div className="">Name</div>
           <div className="">Category</div>

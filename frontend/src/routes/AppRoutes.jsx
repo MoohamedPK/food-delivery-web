@@ -4,6 +4,7 @@ import MainLayout from "../layouts/MainLayout"
 // PAGES
 import { Home,Cart, PlaceOrder, Verify, MyOrders, Error} from "../pages/main"
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
         element: <Verify />,
       },
       {
+
         path: "/myorders",
         element: <MyOrders />,
       },

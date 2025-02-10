@@ -1,29 +1,28 @@
 import { useState } from "react";
-import {assets} from "../../assets/assets"
-import axios from "axios"
+import { assets } from "../../assets/assets";
+import axios from "axios";
 import { toast } from "react-toastify";
 
 function Add() {
-
-  const url = "http://localhost:5000";
+  const url = "https://food-delivery-web-backend-3cig.onrender.com";
   const [image, setImage] = useState(false);
 
   const [data, setData] = useState({
-    name: '',
-    description: '',
-    price: '',
-    category: 'Salade'
+    name: "",
+    description: "",
+    price: "",
+    category: "Salade",
   });
 
   const onChangeHandler = (e) => {
-    const name = e.target.name
-    const value = e.target.value
+    const name = e.target.name;
+    const value = e.target.value;
 
-    setData(prev => ({...prev, [name]: value}));
-  }
+    setData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmitForm = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const formData = new FormData();
     formData.append("name", data.name);
@@ -44,20 +43,18 @@ function Add() {
       setImage(false);
       toast.success(response.data.message);
     } else {
-      toast.error(response.data.message)
+      toast.error(response.data.message);
     }
-  }
-
-
+  };
 
   return (
-    <div className="w-[70%] text-gray-600 mt-10">
+    <div className="w-full text-gray-600 mt-10 mx-auto">
       <form className="space-y-8 flex flex-col" onSubmit={handleSubmitForm}>
-        <div className="image_upload flex flex-col justify-center items-center gap-5 border-1 border-black w-[35%] min-w-[25%] mx-auto py-3 rounded-lg">
+        <div className="image_upload flex flex-col justify-center items-center gap-5 border-1 border-black md:w-[35%] w-full mx-auto py-3 rounded-lg">
           <p>Upload your image</p>
           <label htmlFor="image" className="cursor-pointer">
             <img
-              className="w-[120px]"
+              className="md:w-[120px] w-full"
               src={image ? URL.createObjectURL(image) : assets.upload_area}
               alt=""
             />
@@ -71,7 +68,7 @@ function Add() {
           />
         </div>
 
-        <div className="add_name flex flex-col gap-5 w-[35%] min-w-[25%]">
+        <div className="add_name flex flex-col gap-5 md:w-[35%] ">
           <p>Product name</p>
           <input
             onChange={onChangeHandler}
@@ -84,7 +81,7 @@ function Add() {
           />
         </div>
 
-        <div className="add_name flex flex-col gap-5 w-[35%] min-w-[25%]">
+        <div className="add_name flex flex-col gap-5 md:w-[35%] ">
           <p>Product description</p>
           <textarea
             onChange={onChangeHandler}
@@ -132,7 +129,7 @@ function Add() {
 
         <button
           type="submit"
-          className="bg-black text-white mx-auto px-8 py-1 md:px-18 md:py-3 rounded-lg font-medium cursor-pointer"
+          className="bg-black text-white mx-auto px-8 py-1 my-4 md:px-18 md:py-3 rounded-lg font-medium cursor-pointer"
         >
           ADD
         </button>
@@ -141,4 +138,4 @@ function Add() {
   );
 }
 
-export default Add
+export default Add;

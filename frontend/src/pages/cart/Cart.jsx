@@ -10,8 +10,13 @@ function Cart() {
 
   const dispatch = useDispatch()
   const handleDeleteItemFromCart = (itemId) => {
+
     dispatch(actDeleteCartItem(itemId)).unwrap().then(() => {
-      dispatch(actGetUserCartItems());
+      const promise = dispatch(actGetUserCartItems());
+
+      return () => {
+        promise.abort();
+      }
     })
   }
 

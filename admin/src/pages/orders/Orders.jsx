@@ -26,7 +26,7 @@ function Orders() {
   }
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 w-full">
       <h1 className="md:text-3xl text-xl font-medium">My orders</h1>
       <div className="space-y-4 mt-10">
         {orders.map((order, index) => (

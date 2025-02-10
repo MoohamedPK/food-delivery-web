@@ -81,7 +81,7 @@ function NavBar({ setShowlogin }) {
         </ul>
 
         <div className="flex items-center space-x-8">
-          <Moon className="cursor-pointer"/>
+          
           <div className="relative">
             <Link to={"/cart"}>
               <ShoppingBasket />
@@ -101,9 +101,7 @@ function NavBar({ setShowlogin }) {
 
               {dropown ? (
                 <ul className="dropdown w-[150px] h-[120px] p-2 flex flex-col justify-between items-center absolute top-20 md:right-10 lg:right-20 xl:right-40 bg-white font-medium shadow-2xl shadow-black/70 rounded-lg">
-                  {/* <li className="flex items-center space-x-3 w-full hover:bg-black hover:text-white px-3 py-2 rounded-lg transition duration-200 cursor-pointer ">
-                    <Moon /> <p>dark</p>
-                  </li> */}
+                  
                   <Link
                     to={"/myorders"}
                     className="flex items-center space-x-3 w-full hover:bg-black hover:text-white px-3 py-2 rounded-lg transition duration-200 cursor-pointer "

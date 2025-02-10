@@ -8,7 +8,7 @@ function MyOrders() {
 
   const dispatch = useDispatch();
   const {userOrders, loading, error} = useSelector(state => state.orders)
-  
+
   useEffect(() => {
     dispatch(actGetUserOrders());
   }, [dispatch])

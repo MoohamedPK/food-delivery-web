@@ -10,9 +10,8 @@ export const Layout = () => {
       <NavBar />
       <hr />
 
-      <div className="flex gap-8">
+      <div className="flex md:flex-row flex-col gap-8 mx-4">
         <SideBar />
-        
         <Outlet/>
       </div>
     </div>
