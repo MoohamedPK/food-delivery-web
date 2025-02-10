@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux"
 import actGetUserOrders from "../../store/orders/actions/actGetUserOrders";
 import LoadingHandler from "../../feedback/LoadingHandler"
 import {assets} from "../../assets/assets"
+import {motion} from "motion/react"
 
 function MyOrders() {
 
@@ -20,7 +21,16 @@ function MyOrders() {
           <div className="space-y-4 mt-10">
           {userOrders.map((order, index) => {
             return (
-              <div
+              <motion.div
+              initial ={{opacity: 0,
+                x: -18
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0
+              }}
+              transition={{duration: 0.6}}
+
                 key={index}
                 className="p-4 lg:grid lg:grid-cols-5 sm:flex sm:flex-col items-start space-y-3 lg:items-center text-center font-medium border border-orange-600 rounded-xl"
               >
@@ -48,7 +58,7 @@ function MyOrders() {
                 <button className="bg-black text-white p-2 rounded-lg lg:w-[150px] w-[100px] text-sm lg:mx-auto">
                   Track Order
                 </button>
-              </div>
+              </motion.div>
             );
           })}
                 

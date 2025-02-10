@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import {motion} from "motion/react"
 
 const CartSubTotalPrice = ({ subTotal }) => {
   
@@ -33,12 +34,19 @@ const CartSubTotalPrice = ({ subTotal }) => {
         </div>
 
         <div>
-          <button
+          <motion.button
+            whileHover={{
+              scale: 1.05,
+            }}
+            whileTap={{
+              scale: 1.05,
+              rotate: 8,
+            }}
             onClick={handleCheckout}
             className="bg-orange-500 px-8 py-3 rounded-lg text-white w-full md:w-auto mt-4 md:mt-0 text-sm md:text-base"
           >
             PROCEEDE TO CHECKOUT
-          </button>
+          </motion.button>
         </div>
       </div>
 
@@ -54,9 +62,18 @@ const CartSubTotalPrice = ({ subTotal }) => {
             required
             placeholder="promo code"
           />
-          <button className="text-white w-full md:w-auto md:ml-3 ml-0 bg-black px-10 py-2">
+          <motion.button
+            whileHover={{
+              scale: 1.05,
+            }}
+            whileTap={{
+              scale: 1.05,
+              rotate: 8,
+            }}
+            className="text-white w-full md:w-auto md:ml-3 ml-0 bg-black px-10 py-2"
+          >
             Submit
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>

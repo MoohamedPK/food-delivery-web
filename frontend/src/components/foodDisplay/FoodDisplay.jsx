@@ -24,6 +24,7 @@ function FoodDisplay({category}) {
       >
         {records.slice(0, visible).map((item, index) => {
           if (category === "all" || category === item.category) {
+
             return <FoodItem key={index} {...item} />;
           }
         })}

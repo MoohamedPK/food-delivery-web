@@ -3,7 +3,6 @@ import "./foodMenu.css";
 
 function FoodMenu({ category, setCategory }) {
 
-    
   return (
     <div id="category">
       <div className=" space-y-7 flex flex-col justify-center items-center">

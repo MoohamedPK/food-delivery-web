@@ -2,6 +2,7 @@ import useGetSubTotal from "../../hooks/useGetSubTotal"
 import {useForm} from "react-hook-form"
 import { useDispatch } from "react-redux";
 import { actPlaceorder } from "../../store/cart/index";
+import {motion} from "motion/react"
 
 function PlaceOrder() {
 
@@ -115,12 +116,19 @@ function PlaceOrder() {
         </div>
 
         <div>
-          <button
+          <motion.button
+          whileHover={{
+            scale: 1.05
+          }}
+            whileTap={{
+              scale:1.05,
+              rotate: 8
+            }}
             type="submit"
             className="bg-orange-500 px-8 py-3 rounded-lg text-white w-full mt-3 md:w-auto md:mt-0"
           >
             PROCEEDE TO PAYMENT
-          </button>
+          </motion.button>
         </div>
       </div>
     </form>

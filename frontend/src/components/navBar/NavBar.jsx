@@ -1,7 +1,7 @@
 import {assets} from "../../assets/assets";
 import "../../components/navBar/navbar.css"
 import { Link } from "react-router-dom";
-import {LogOut, Moon, Package, ShoppingBasket, User2} from "lucide-react"
+import {LogOut, Package, ShoppingBasket, User2} from "lucide-react"
 import MobileNavbar from "./MobileNavbar";
 import useNavbar from "../../hooks/useNavbar";
 

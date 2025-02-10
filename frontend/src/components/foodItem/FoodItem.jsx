@@ -3,6 +3,7 @@ import {motion} from "motion/react"
 import { actAddCartItems, actRemoveCartItems } from "../../store/cart/index";
 
 const FoodItem = ({_id, name, price, image, description}) => {
+  
 
     const dispatch = useDispatch();
     const {items} = useSelector(state => state.cart)
